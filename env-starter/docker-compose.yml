@@ -1,0 +1,41 @@
+
+services:
+  nacos:
+    image: nacos/nacos-server:v2.3.0
+    container_name: nacos-standalone
+    environment:
+      - MODE=standalone
+      - SPRING_DATASOURCE_PLATFORM=mysql
+      - MYSQL_SERVICE_HOST=mysql
+      - MYSQL_SERVICE_DB_NAME=nacos_config
+      - MYSQL_SERVICE_PORT=3306
+      - MYSQL_SERVICE_USER=root
+      - MYSQL_SERVICE_PASSWORD=123456
+      - NACOS_AUTH_ENABLE=false # 关闭认证，推荐开发环境使用
+    ports:
+      - "8848:8848"
+    depends_on:
+      - mysql
+
+  redis:
+    image: redis:7.2.4
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+#  rabbitmq:
+#    image: rabbitmq:3.12-management
+#    container_name: rabbitmq
+#    ports:
+#      - "5672:5672"
+#      - "15672:15672"
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=nacos_config
+    ports:
+      - "3307:3306"   # 本机3307映射到容器3306
+    command: --default-authentication-plugin=mysql_native_password

@@ -1,0 +1,17 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://你的配置仓库地址
+          search-paths: config-repo
+          username: 你的git用户名
+          password: 你的git密码
+    nacos:
+      discovery:
+        server-addr: localhost:8848
