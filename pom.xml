@@ -79,23 +79,6 @@
                 <artifactId>spring-cloud-openfeign-core</artifactId>
                 <version>3.1.8</version>
             </dependency>
-<!--            &lt;!&ndash; 嵌入式Nacos &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.alibaba.nacos</groupId>-->
-<!--                <artifactId>nacos-embedded</artifactId>-->
-<!--                <version>0.2.7</version>-->
-<!--            </dependency>-->
-<!--            &lt;!&ndash; 嵌入式Redis（可选，推荐用Testcontainers或Redisson） &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>org.testcontainers</groupId>-->
-<!--                <artifactId>testcontainers</artifactId>-->
-<!--                <version>1.19.7</version>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>org.testcontainers</groupId>-->
-<!--                <artifactId>redis</artifactId>-->
-<!--                <version>1.19.7</version>-->
-<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 </project>
