@@ -15,15 +15,11 @@
     <description>配置中心服务</description>
 
     <dependencies>
-        <!-- Spring Cloud Config Server -->
+        <!-- 公共模块 -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-        <!-- Nacos Discovery（可选，如果用Nacos做注册中心） -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <groupId>com.example.microservice</groupId>
+            <artifactId>common-framework</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>

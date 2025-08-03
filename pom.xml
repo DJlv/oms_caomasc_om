@@ -16,14 +16,6 @@
     <modules>
         <module>common-framework</module>
         <module>auth-service</module>
-        <module>gateway-service</module>
-        <module>config-service</module>
-
-
-
-
-        <module>common-framework</module>
-        <module>auth-service</module>
         <module>config-service</module>
         <module>gateway-service</module>
         <module>log-service</module>
@@ -38,6 +30,7 @@
         <spring-cloud.version>2021.0.8</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
         <jjwt.version>0.11.5</jjwt.version>
+        <nacos.version>2021.1</nacos.version>
     </properties>
 
     <dependencyManagement>
@@ -69,24 +62,40 @@
                 <scope>import</scope>
             </dependency>
 
-
-            <!-- 嵌入式Nacos -->
+            <!--nacos-->
             <dependency>
-                <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-embedded</artifactId>
-                <version>0.2.7</version>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos.version}</version>
             </dependency>
-            <!-- 嵌入式Redis（可选，推荐用Testcontainers或Redisson） -->
+            <!--openfeign-->
             <dependency>
-                <groupId>org.testcontainers</groupId>
-                <artifactId>testcontainers</artifactId>
-                <version>1.19.7</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>3.1.8</version>
             </dependency>
             <dependency>
-                <groupId>org.testcontainers</groupId>
-                <artifactId>redis</artifactId>
-                <version>1.19.7</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-openfeign-core</artifactId>
+                <version>3.1.8</version>
             </dependency>
+<!--            &lt;!&ndash; 嵌入式Nacos &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba.nacos</groupId>-->
+<!--                <artifactId>nacos-embedded</artifactId>-->
+<!--                <version>0.2.7</version>-->
+<!--            </dependency>-->
+<!--            &lt;!&ndash; 嵌入式Redis（可选，推荐用Testcontainers或Redisson） &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>org.testcontainers</groupId>-->
+<!--                <artifactId>testcontainers</artifactId>-->
+<!--                <version>1.19.7</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.testcontainers</groupId>-->
+<!--                <artifactId>redis</artifactId>-->
+<!--                <version>1.19.7</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 </project>

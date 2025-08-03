@@ -14,6 +14,8 @@ services:
       - NACOS_AUTH_ENABLE=false # 关闭认证，推荐开发环境使用
     ports:
       - "8848:8848"
+      - "9848:9848" # 连接nacos报错一定要添加这两个配置
+      - "9849:9849" # 连接nacos报错一定要添加这两个配置
     depends_on:
       - mysql
 
